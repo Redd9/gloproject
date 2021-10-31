@@ -11,17 +11,26 @@ body {
 .container {
     max-width: 1170px;
     margin: 0 auto;
+    width: 90%;
 }
 
 .header {
-    min-height: 100vh;
+    padding-bottom: 60px;
     background: linear-gradient(180deg, rgba(98, 20, 2, 0.31) 0%, #2f0262 85.62%), url(../img/bg.jpg) no-repeat center top / cover;
+}
+
+.m-menu {
+    display: none;
 }
 
 .navbar {
     display: flex;
     align-items: center;
     padding: 30px 0 0 30px;
+}
+
+.nav {
+    position: relative;
 }
 
 .menu {
@@ -177,17 +186,20 @@ body {
     padding: 18px;
     cursor: pointer;
     color:#fff;
-
 }
 
 .select-cinema {
-    min-width: 470px;
+    width: 470px;
 }
 
 .scheme {
     background: rgba(94, 94, 94, 0.18);
     border-radius: 10px;
     margin-bottom: 40px;
+}
+
+.scheme-svg {
+    max-width: 1170px;
 }
 
 .scheme path:not(.light) {
@@ -213,6 +225,7 @@ body {
     align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     max-width: 1024px;
+    width: 90%;
     margin: auto;
     padding: 22px 0 30px 0;
 }
@@ -253,4 +266,96 @@ body {
     color: white;
     background: #fe8e05;
     border-radius: 5px;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .select-cinema {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+
+    .session {
+        flex-wrap: wrap;
+    }
+
+    .sesiion-date {
+        flex-basis: 70%;
+        margin-bottom: 40px;
+    }
+    
+    .session-time {
+        order: 2;
+    }
+
+    .session-cinema {
+        order: 3;
+    }
+
+    .menu-item {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 560px;
+    }
+    .menu {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        padding: 20px;
+        margin-left: 20px;
+        flex-direction: column;
+        background-color: #2f0262;
+        z-index: 9;
+        border-radius: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20%);
+        transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .menu-item:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .m-menu {
+        display: block;
+        background-color: transparent;
+        border: none;
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .isopen {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .film-description {
+        margin-right: 30px;
+    }
+
+    .film {
+        flex-direction: column;
+    }
+
+    .film-trailer {
+        margin-right: auto;
+        margin-left: 0;
+        margin-top: 40px;
+    }
 }
